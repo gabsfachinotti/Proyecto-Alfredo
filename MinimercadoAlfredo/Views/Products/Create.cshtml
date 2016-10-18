@@ -34,6 +34,14 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.ArticleNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArticleNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArticleNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Cost, "Costo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
@@ -77,7 +85,7 @@
             @Html.LabelFor(model => model.Minimum, "Stock Mínimo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Minimum, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Minimum, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Minimum, "El Sistema le avisará cuando el Stock de este Producto sea menor a este valor", new { @class = "text" })
             </div>
         </div>
 

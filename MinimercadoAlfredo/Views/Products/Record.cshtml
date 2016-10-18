@@ -49,13 +49,13 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td style="color:black">
                     @Html.DisplayFor(modelItem => item.Category.CategoryName)
                 </td>
-                <td width="300px">
+                <td width="300px" style="color:black">
                     @Html.DisplayFor(modelItem => item.ProductDescription)
                 </td>
-                <td>
+                <td style="color:black">
                     @Html.DisplayFor(modelItem => item.Cost)
                 </td>
                 @if (item.State == true)
@@ -84,6 +84,7 @@
             </tr>
         }
     </tbody>
+
 </table>
 
 <div class="modal fade" id="myModal1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

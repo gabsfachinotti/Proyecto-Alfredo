@@ -36,15 +36,8 @@
                 @Html.DisplayNameFor(model => model.ProductDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cost)
+                @Html.DisplayNameFor(model => model.ArticleNumber)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WholeSalePrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublicPrice)
-            </th>
-
             <th>
                 @Html.DisplayNameFor(model => model.Stock)
             </th>
@@ -60,23 +53,16 @@
             <tr>
                 @if (item.Stock >= item.Minimum)
                 {
-                    <td>
+                    <td style="color:black">
                         @Html.DisplayFor(modelItem => item.Category.CategoryName)
                     </td>
-                    <td>
+                    <td style="color:black">
                         @Html.DisplayFor(modelItem => item.ProductDescription)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cost)
+                    <td style="color:black">
+                        @Html.DisplayFor(modelItem => item.ArticleNumber)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.WholeSalePrice)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PublicPrice)
-                    </td>
-
-                    <td>
+                    <td style="color:black">
                         @Html.DisplayFor(modelItem => item.Stock)
                     </td>
                 }
@@ -89,14 +75,8 @@
                         @Html.DisplayFor(modelItem => item.ProductDescription)
                     </td>
                     <td style="color:red">
-                        @Html.DisplayFor(modelItem => item.Cost)
-                    </td>
-                    <td style="color:red">
-                        @Html.DisplayFor(modelItem => item.WholeSalePrice)
-                    </td>
-                    <td style="color:red">
-                        @Html.DisplayFor(modelItem => item.PublicPrice)
-                    </td>
+                        @Html.DisplayFor(modelItem => item.ArticleNumber)
+                    </td>                    
                     <td style="color:red">
                         @Html.DisplayFor(modelItem => item.Stock)
                     </td>

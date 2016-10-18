@@ -200,3 +200,5 @@ C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\es\Microsoft.Owin.Securit
 C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.csprojResolveAssemblyReference.cache
 C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.dll
 C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.pdb
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.Migrations.InitialCreate.resources
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.csproj.GenerateResource.Cache
