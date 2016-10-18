@@ -16,10 +16,10 @@
         </button>
 
         <ul class="dropdown-menu" role="menu">
-            <li><a href="@Url.Action("Index","Products")">Productos Activos</a></li>
-            <li><a href="@Url.Action("Index","Products", new { lista = 1})">Productos Desactivados</a></li>
-            <li><a href="@Url.Action("Index","Products", new { lista = 3})">Productos con Stock mínimo</a></li>
-
+            <li><a href="@Url.Action("Index","Products")">Productos Activos</a></li>            
+            <li><a href="@Url.Action("Minimum","Products")">Productos con Stock mínimo</a></li>
+            <li><a href="@Url.Action("OffProducts","Products")">Productos Desactivados</a></li>
+            <li><a href="@Url.Action("Record","Products")">Todos los Productos</a></li>
         </ul>
     </div>
 </div>
@@ -34,7 +34,7 @@
                 @Html.DisplayNameFor(model => model.ProductDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArticleNumber)
+                @Html.DisplayNameFor(model => model.ProductNumber)
             </th>
             <th>
                 Último costo de adquisición
@@ -59,12 +59,12 @@
                     @Html.DisplayFor(modelItem => item.ProductDescription)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ArticleNumber)
+                    @Html.DisplayFor(modelItem => item.ProductNumber)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cost)
                 </td>
-                @if (item.State == true)
+                @if (item.ProductState == true)
                 {
                     <td width="125px">
                         <text style="color:green">Activo</text>
@@ -88,7 +88,7 @@
                             <li><a href="@Url.Action("Edit","Products", new { id = item.IdProduct })">Editar</a></li>
                             <li><a href="@Url.Action("Details","Products", new { id = item.IdProduct })">Detalles</a></li>
                             <li><a href="@Url.Action("Delete","Products", new { id = item.IdProduct })" class="dialog-window1">Eliminar</a></li>
-                            @if (item.State == false)
+                            @if (item.ProductState == false)
                             {
                                 <li><a href="@Url.Action("Deactivate", "Products", new { id = item.IdProduct })" class="dialog-window2">Activar</a></li>
                             }

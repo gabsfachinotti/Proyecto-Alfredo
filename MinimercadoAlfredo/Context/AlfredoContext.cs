@@ -7,7 +7,13 @@ using System.Web;
 namespace MinimercadoAlfredo.Context
 {
     public class AlfredoContext: DbContext
+
+
     {
+        public AlfredoContext()
+            : base("DefaultConnection")
+        {
+        }
         public System.Data.Entity.DbSet<MinimercadoAlfredo.Models.Product> Products { get; set; }
 
         public System.Data.Entity.DbSet<MinimercadoAlfredo.Models.Category> Categories { get; set; }

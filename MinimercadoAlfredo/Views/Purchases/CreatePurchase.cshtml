@@ -1,0 +1,112 @@
+﻿@model MinimercadoAlfredo.ViewModels.PurchaseVM
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="text-center">Nueva Compra</h2>
+<hr style="color:grey;border-color:grey" />
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col-lg-6">
+                @Html.LabelFor(model => model.Provider.IdProvider, "Proveedor", htmlAttributes: new { @class = "control-label col-md-5" })
+                <select class="js-example-basic-single" style="font:small-caption; width: 200px; height:25px; background-color:beige;">
+                    <option value="">Seleccione un Proveedor</option>
+                    @foreach (var item in ViewBag.Provider)
+                    {
+                        <option value="@item.ProviderName">@item.ProviderName</option>
+                    }
+                </select>
+
+            </div>
+            <div class="col-lg-6 text-left">
+                @Html.LabelFor(model => model.PurchaseDate, "Fecha de Compra", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div>
+                    @Html.EditorFor(model => model.PurchaseDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-6">
+                @Html.LabelFor(model => model.Comments, "Comentarios", htmlAttributes: new { @class = "control-label col-md-5" })
+                <div>
+                    <textarea id="Comments" style="margin:0px; width: 290px; height: 78px"></textarea>
+                    @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <br />
+        <h3 class="text-center">Detalle de Compra</h3>
+        <hr />
+
+        <div class="details">
+            <table width="60%" align="center">
+                <tr>
+                    <td>Producto</td>
+                    <td>Cantidad</td>
+                    <td>Precio de Compra</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="productDescription" />
+                        <span class="error">Debe completar el campo</span>
+                    </td>
+                    <td>
+                        <input type="text" id="quantity" />
+                        <span class="error">Debe completar el campo</span>
+                    </td>
+                    <td>
+                        <input type="text" id="cost" />
+                        <span class="error">Debe completar el campo</span>
+                    </td>
+                    <td>
+                        <input type="button" id="add" value="Agregar Producto" class="btn btn-primary btn-sm" />
+                    </td>
+                </tr>
+            </table>
+            <div id="orderItems" class="table-bordered" align="center">
+
+            </div>
+            <br />
+            <div style="padding:10px 0px; text-align:right">
+                <input id="submit" type="button" value="Guardar Compra" style="padding:10px 20px" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar Compra" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>
+
+@*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.4/themes/smoothness/jquery-ui.css">*@
+@section Scripts {
+    @*<script src="//code.jquery.com/ui/1.12.4/jquery-ui.js"></script>*@
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".js-example-basic-single").select2();
+        });
+    </script>
+}

@@ -7,6 +7,13 @@
 <h2 class="text-center">Lista de Productos Activos</h2>
 <hr style="color:grey;border-color:grey" />
 
+@*<div class="btn-group btn-group-justified btn-primary">
+    <a href="#" class="btn btn-default">Productos Desactivados</a>
+    <a href="#" class="btn btn-default">Todos los Productos</a>
+    <a href="#" class="btn btn-default">Productos con Stock mínimo</a>
+</div>*@
+
+<br />
 
 <div class="row">
     <div class="col-lg-10">
@@ -19,9 +26,10 @@
         </button>
 
         <ul class="dropdown-menu" role="menu">
-            <li><a href="@Url.Action("Index","Products", new { lista = 1 })">Productos Desactivados</a></li>
-            <li><a href="@Url.Action("Index","Products", new { lista = 2 })">Todos los Productos</a></li>
-            <li><a href="@Url.Action("Index","Products", new { lista = 3 })">Productos con Stock mínimo</a></li>
+            <li><a href="@Url.Action("Index","Products")">Productos Activos</a></li>
+            <li><a href="@Url.Action("Minimum","Products")">Productos con Stock mínimo</a></li>
+            <li><a href="@Url.Action("OffProducts","Products")">Productos Desactivados</a></li>            
+            <li><a href="@Url.Action("Record","Products")">Todos los Productos</a></li>
         </ul>
     </div>
 </div>
@@ -36,7 +44,7 @@
                 @Html.DisplayNameFor(model => model.ProductDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArticleNumber)
+                @Html.DisplayNameFor(model => model.ProductNumber)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Stock)
@@ -60,7 +68,7 @@
                         @Html.DisplayFor(modelItem => item.ProductDescription)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ArticleNumber)
+                        @Html.DisplayFor(modelItem => item.ProductNumber)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Stock)
@@ -75,7 +83,7 @@
                         @Html.DisplayFor(modelItem => item.ProductDescription)
                     </td>
                     <td style="color:red">
-                        @Html.DisplayFor(modelItem => item.ArticleNumber)
+                        @Html.DisplayFor(modelItem => item.ProductNumber)
                     </td>                    
                     <td style="color:red">
                         @Html.DisplayFor(modelItem => item.Stock)

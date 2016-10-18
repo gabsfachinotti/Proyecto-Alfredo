@@ -21,7 +21,7 @@
                 @Html.DisplayNameFor(model => model.Customer.CustomerName)
             </th>                        
             <th>
-                @Html.DisplayNameFor(model => model.SaleTotal)
+                Importe Total
             </th>
             <th class="text-center">
                 Acciones
@@ -59,28 +59,10 @@
 
         ////Grilla automatica//
         $("#tabla").DataTable({
-            "order": [[0, "desc"]]
-        });
+            order: [[0, "desc"]],
+            "language": { "url": "/Scripts/DataTables/spanish.json" }
+        });        
 
-        //$("body").on("click", "a.dialog-window1", null, function (e) {
-        //    e.preventDefault();
-
-        //    var $link = $(this); // Reference to <a/> link
-        //    var title = $link.text(); //this is title to fetch in htnl
-        //    $('#myModal1.modal-title').html(title);
-
-        //    var url = $(this).attr('href');
-        //    if (url.indexOf('#') == 0) {
-        //        $('#myModal1').modal('show');
-        //    }
-        //    else {
-        //        $.get(url, function (data) {
-        //            $('#myModal1 .te').html(data);
-        //            $('#myModal1').modal();
-        //        }).success(function () { $('input:text:visible:first').focus(); });
-        //    }
-        //});
-;
     })
     </script>
 }
