@@ -15,27 +15,31 @@ namespace MinimercadoAlfredo.Models
         [Display(Name = "Descripción")]
         public string ProductDescription { get; set; }
 
+        [Required]
+        [Display(Name = "Número de Artículo")]
+        public int ArticleNumber { get; set; }
+
         [Display(Name = "Costo")]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
-        public decimal Cost { get; set; }
+        public decimal? Cost { get; set; }
 
         [Display(Name = "P Mayorista")]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
-        public decimal WholeSalePrice { get; set; }
+        public decimal? WholeSalePrice { get; set; }
 
         [Display(Name = "P Minorista")]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
-        public decimal PublicPrice { get; set; }
+        public decimal? PublicPrice { get; set; }
 
         [Display(Name = "Última Actualización")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
-        public DateTime UploadDate { get; set; }
+        public DateTime? UploadDate { get; set; }
 
         public float Stock { get; set; }
 
         [Display(Name = "Stock mínimo")]
-        public float Minimum { get; set; }
+        public float? Minimum { get; set; }
 
         public bool State { get; set; }
 

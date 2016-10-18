@@ -16,13 +16,13 @@ namespace MinimercadoAlfredo.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime SaleDate { get; set; }
 
-        public int Discount { get; set; }
+        public int? Discount { get; set; }
 
         public string Comments { get; set; }
 
         [Display(Name = "Total")]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
-        public float SaleTotal { get; set; }
+        public float? SaleTotal { get; set; }
 
         public int IdCustomer { get; set; } //Clave Foránea de Cliente (Customer)
 

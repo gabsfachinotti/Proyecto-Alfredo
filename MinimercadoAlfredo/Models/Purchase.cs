@@ -21,7 +21,7 @@ namespace MinimercadoAlfredo.Models
 
         [Display(Name = "Total")]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
-        public decimal PurchaseTotal { get; set; }
+        public decimal? PurchaseTotal { get; set; }
 
         public int IdProvider { get; set; } //Clave Foránea de Proveedor (Provider)
 
