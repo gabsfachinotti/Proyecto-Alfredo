@@ -52,16 +52,16 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td style="color:black">
+                <td>
                     @Html.DisplayFor(modelItem => item.Category.CategoryName)
                 </td>
-                <td width="300px" style="color:black">
+                <td width="300px">
                     @Html.DisplayFor(modelItem => item.ProductDescription)
                 </td>
-                <td width="300px" style="color:black">
+                <td>
                     @Html.DisplayFor(modelItem => item.ArticleNumber)
                 </td>
-                <td style="color:black">
+                <td>
                     @Html.DisplayFor(modelItem => item.Cost)
                 </td>
                 @if (item.State == true)
@@ -78,13 +78,22 @@
                 }
 
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.IdProduct }, new { @class = "btn btn-primary btn-sm" })
-                    @Html.ActionLink("Detalles", "Details", new { id = item.IdProduct }, new { @class = "btn btn-primary btn-sm" })
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdProduct }, new { @class = "dialog-window1 btn btn-primary btn-sm" })
-                    @if (item.State == false)
-                    {
-                        @Html.ActionLink("Activar", "Deactivate", new { id = item.IdProduct }, new { @class = "dialog-window2 btn btn-primary btn-sm" })
-                    }
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle"
+                                data-toggle="dropdown">
+                            Acciones <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="@Url.Action("Edit","Products", new { id = item.IdProduct })">Editar</a></li>
+                            <li><a href="@Url.Action("Details","Products", new { id = item.IdProduct })">Detalles</a></li>
+                            <li><a href="@Url.Action("Delete","Products", new { id = item.IdProduct })" class="dialog-window1">Eliminar</a></li>
+                            @if (item.State == false)
+                            {
+                                <li><a href="@Url.Action("Deactivate", "Products", new { id = item.IdProduct })" class="dialog-window2">Activar</a></li>
+                            }
+                        </ul>
+                    </div>                    
                     
                 </td>
             </tr>
