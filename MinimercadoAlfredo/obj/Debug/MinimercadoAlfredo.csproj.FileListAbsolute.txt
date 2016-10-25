@@ -200,3 +200,17 @@ C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\es\Microsoft.Owin.Securit
 C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.dll
 C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.pdb
 C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\obj\Debug\MinimercadoAlfredo.csprojResolveAssemblyReference.cache
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\csc.exe.config
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\csc.rsp
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\csi.exe
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\csi.rsp
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\System.AppContext.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\System.IO.FileSystem.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\vbc.exe.config
+C:\Proyectos\MinimercadoAlfredo\MinimercadoAlfredo\bin\roslyn\vbc.rsp
