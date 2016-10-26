@@ -9,7 +9,10 @@ namespace MinimercadoAlfredo
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(
-                        "~/Scripts/jquery-{version}.js",                        
+                         "~/Scripts/jquery-1.12.4.js",
+                        "~/Scripts/jquery-1.12.4.min.js",
+                         "~/Scripts/jquery-ui-1.12.1.js",
+                        "~/Scripts/jquery-ui-1.12.1.min.js",
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/datatables/jquery.datatables.js",
                         "~/Scripts/datatables/datatables.bootstrap.js",                        

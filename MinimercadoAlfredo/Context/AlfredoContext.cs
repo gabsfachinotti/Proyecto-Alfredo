@@ -25,5 +25,9 @@ namespace MinimercadoAlfredo.Context
         public System.Data.Entity.DbSet<MinimercadoAlfredo.Models.Sale> Sales { get; set; }
 
         public System.Data.Entity.DbSet<MinimercadoAlfredo.Models.Purchase> Purchases { get; set; }
+
+        public System.Data.Entity.DbSet<MinimercadoAlfredo.Models.PurchaseLine> PurchaseLines { get; set; }
+
+        public System.Data.Entity.DbSet<MinimercadoAlfredo.Models.SaleLine> SaleLines { get; set; }
     }
 }

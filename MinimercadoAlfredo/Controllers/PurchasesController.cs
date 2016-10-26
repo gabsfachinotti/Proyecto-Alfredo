@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MinimercadoAlfredo.Context;
 using MinimercadoAlfredo.Models;
+using MinimercadoAlfredo.ViewModels;
 
 namespace MinimercadoAlfredo.Controllers
 {
@@ -49,18 +50,38 @@ namespace MinimercadoAlfredo.Controllers
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdPurchase,PurchaseDate,Comments,PurchaseTotal,IdProvider")] Purchase purchase)
+        public JsonResult Create(PurchaseVM purchase)
         {
+            bool status = false;
+            Purchase p = new Purchase();
+            var idprovider = Int32.Parse(purchase.ProviderName);
+
             if (ModelState.IsValid)
             {
-                db.Purchases.Add(purchase);
+                p.IdProvider = idprovider;
+                p.PurchaseDate = purchase.PurchaseDate;
+                p.Comments = purchase.PurchaseComments;
+                p.PurchaseTotal = purchase.PurchaseTotal;
+
+                db.Purchases.Add(p);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                foreach (var item in purchase.PurchaseLines)
+                {
+                    PurchaseLine purchaseline = new PurchaseLine();
+                    purchaseline.IdPurchase = p.IdPurchase;
+                    purchaseline.IdProduct = item.IdProduct;
+                    purchaseline.Cost = item.Cost;
+                    purchaseline.PurchaseQuantity = item.PurchaseQuantity;
+                    purchaseline.LineTotal = item.LineTotal;
+
+                    db.PurchaseLines.Add(purchaseline);
+                    db.SaveChanges();
+                }
+                status = true;
             }
 
-            ViewBag.IdProvider = new SelectList(db.Providers, "IdProvider", "ProviderName", purchase.IdProvider);
-            return View(purchase);
+            return new JsonResult { Data = new { status = status } };
         }
 
         // GET: Purchases/Edit/5
